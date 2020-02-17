@@ -1,0 +1,190 @@
+GET  http://localhost:8080/api/ingredients
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+GET http://localhost:8080/api/ingredients
+page-size:20
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+GET http://localhost:8080/api/ingredients
+page: 2
+page-size:2
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 400, "Response status is not 400");
+});
+%}
+###
+GET  http://localhost:8080/api/ingredients/2
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+//SEARCH BY TERM ----
+GET  http://localhost:8080/api/ingredients?name=m
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+###
+//Sostojka Postoi
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=test4&spicy=true&amount=1&veggie=true
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "Response status is not 201");
+});
+%}
+###
+//Sostojka Ne Postoi
+POST http://localhost:8080/api/ingredients
+Content-Type: application/x-www-form-urlencoded
+
+name=peper&spicy=false&amount=1&veggie=true
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "Response status is not 201");
+});
+%}
+###
+//Delete
+DELETE http://localhost:8080/api/ingredients/9
+Content-Type: application/x-www-form-urlencoded
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "Response status is not 201");
+});
+%}
+###
+GET http://localhost:8080/api/ingredients/as?spicy=true
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+PATCH http://localhost:8080/api/ingredients/2
+Content-Type: application/x-www-form-urlencoded
+
+name=test&spicy=false&amount=18&veggie=true
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 201");
+  client.assert(response.body.hasOwnProperty("slotId"), 'Can not find the slotId');
+});
+%}
+
+###
+GET http://localhost:8080/api/ingredients/2/pizzas
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+// ---------------------- PIZA API ----------------------------
+
+###
+GET http://localhost:8080/api/pizzas
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+###
+GET http://localhost:8080/api/pizzas
+page-size:20
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+GET http://localhost:8080/api/pizzas
+page: 1
+page-size:2
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 400, "Response status is not 400");
+});
+%}
+###
+GET  http://localhost:8080/api/pizzas/17
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+###
+GET  http://localhost:8080/api/pizzas/as?totalIngredients=2
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+###
+GET  http://localhost:8080/api/pizzas/compare?pizza1=27&pizza2=28
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+DELETE http://localhost:8080/api/pizzas/17
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+POST http://localhost:8080/api/pizzas
+name:Test2
+desc:ASDASD
+ingred:tomato sauce, onions
+Content-Type: application/x-www-form-urlencoded
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "Response status is not 201");
+});
+%}
+
+###

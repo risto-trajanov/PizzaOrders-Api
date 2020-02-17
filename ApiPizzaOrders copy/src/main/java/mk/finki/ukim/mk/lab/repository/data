@@ -1,0 +1,98 @@
+{
+  "name" : "Margarita",
+    "price": 100,
+    "ingredients": [
+      "Mozzarella cheese"
+    ]
+  ,
+  "name" : "Hawaiian",
+    "price": 140,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Ham",
+      "Pineapple"
+    ]
+  ,
+  "name" :"Litle Italy",
+    "price": 140,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Ham",
+      "Mushrooms"
+    ]
+  ,
+  "name" :"New Yorker",
+    "price": 170,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Cheddar cheese",
+      "Beef",
+      "Bacon"
+    ]
+  ,
+  "name" :"Hot And Spicy",
+    "price": 170,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Pepperoni",
+      "Onions",
+      "Jalapenos",
+      "Black Pepper"
+    ]
+  ,
+  "name" :"Pepperoni Feast",
+    "price": 140,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Double Pepperoni"
+    ]
+  ,
+  "name" :"Vegiterian",
+    "price": 170,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Green peppers",
+      "Onions",
+      "Mushrooms",
+      "Black olives",
+      "Tomatoes"
+    ]
+  ,
+  "name" :"Classic",
+    "price": 170,
+    "ingredients": [
+      "Mozzarella cheese",
+      "Onions",
+      "Green peppers",
+      "pepperoni",
+      "Mushrooms"
+    ],
+  "name" :"Classic",
+  "price": 170,
+  "ingredients": [
+    "Mozzarella cheese",
+    "Onions",
+    "Green peppers",
+    "pepperoni",
+    "Mushrooms"
+  ],
+  "name" :"Classic",
+  "price": 170,
+  "ingredients": [
+    "Mozzarella cheese",
+    "Onions",
+    "Green peppers",
+    "pepperoni",
+    "Mushrooms"
+  ],
+  "name" :"Classic",
+  "price": 170,
+  "ingredients": [
+    "Mozzarella cheese",
+    "Onions",
+    "Green peppers",
+    "pepperoni",
+    "Mushrooms"
+  ]
+
+}
